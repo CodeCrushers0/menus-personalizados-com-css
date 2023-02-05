@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radial Menu With Magic Indicator</title>
+  <title>Menu Indicator</title>
 
   <link rel="stylesheet" href="./style.css">
 
@@ -13,39 +13,50 @@
 
 <body>
 
-  <ul class="menu">
-    <div class="toggle">
-      <ion-icon name="add-outline"></ion-icon>
-    </div>
-    <li style="--i:0;"><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
-    <li style="--i:1;"><a href="#"><ion-icon name="person-outline"></ion-icon></a></li>
-    <li style="--i:2;"><a href="#"><ion-icon name="settings-outline"></ion-icon></a></li>
-    <li style="--i:3;"><a href="#"><ion-icon name="mail-outline"></ion-icon></a></li>
-    <li style="--i:4;"><a href="#"><ion-icon name="videocam-outline"></ion-icon></a></li>
-    <li style="--i:5;"><a href="#"><ion-icon name="key-outline"></ion-icon></a></li>
-    <li style="--i:6;"><a href="#"><ion-icon name="game-controller-outline"></ion-icon></a></li>
-    <li style="--i:7;"><a href="#"><ion-icon name="camera-outline"></ion-icon></a></li>
-    <!-- Total number of list item = 8 -->
-
-    <div class="indicator">
-    </div>
-  </ul>
+  <div class="navigation">
+    <ul>
+      <li class="list active">
+        <a href="#">
+          <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+          <span class="text">Home</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#">
+          <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+          <span class="text">Profile</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#">
+          <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+          <span class="text">Message</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#">
+          <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+          <span class="text">Photos</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#">
+          <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+          <span class="text">Settings</span>
+        </a>
+      </li>
+      <div class="indicator">
+      </div>
+    </ul>
+  </div>
 
   <script>
-    let menuToggle = document.querySelector(".toggle");
-    let menu = document.querySelector(".menu");
-
-    menuToggle.onclick = function () {
-      menu.classList.toggle("active")
-      menuToggle.classList.toggle("active")
-    }
-
-    const list = document.querySelectorAll("li");
+    const list = document.querySelectorAll(".list");
     function activeLink() {
       list.forEach((item) => item.classList.remove("active"));
-      this.classList.add("active")
+      this.classList.add("active");
     }
-    list.forEach((item) => item.addEventListener("click", activeLink))
+    list.forEach((item) => item.addEventListener("click", activeLink));
   </script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
